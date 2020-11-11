@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <title>Dashboard</title>
+        <link rel="stylesheet" href="dashboard.css">
+
+        <!-- fontes -->
+        <link href="https://fonts.googleapis.com/css2?family=PT+Sans&family=Ubuntu:wght@300;500;700&display=swap" rel="stylesheet">
+        
+        <!-- JavaScript e icones -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+        <script src="dashboard.js"></script>
+    </head>
+
+    <body>
+        <!-- header -->
+        <div id="anchorHeader">
+            <p>User <span class="boldWords">Management</span></p>
+            <!-- perguntar sobre o path do arquivo -> se não estiver com a pasta treinamento aberto não funciona :( -->
+            <button id="addNewUser" onclick=onAddNewUserClick()> 
+                <i class="fa fa-plus-circle" aria-hidden="true"></i>
+                Add New User
+            </button>
+            <button id="exportToExcel">
+                <i class="fa fa-file" aria-hidden="true"></i>
+                Export to Excel
+            </button>        
+        </div>
+        <!-- main -->
+        <div id="anchorBody">
+            <table class="table">
+                <thead>
+                    <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Date Created</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Action</th>
+                    </tr>
+                </thead>
+                <tbody id="tableBody">
+                    <tr>
+                        <!-- tr vazio pois o js vai adicionar os itens da tabela -->
+                    </tr>
+                </tbody>
+            </table>
+            <!-- parte que mostra as páginas -->
+            <div id="pageCounter">
+                <p></p>Showing <span class="boldWords" id="currentEntrie"></span> out of <span class="boldWords" id="totalAmount"></span> entries</p>
+                <button> Next </button>
+                <button id="5button"> <span>5</span> </button>
+                <button id="4button"> <span>4</span> </button>
+                <button id="3button"> <span>3</span> </button>
+                <button id="2button"> <span>2</span> </button>
+                <button id="1button"> <span>1</span> </button>
+                <button> Previous </button>
+            </div>
+        </div>
+    </body>
+
+    <script>
+        //FORMA COMO O SCRIPT FUNCIONA = IGNORA AS FUNCTIONS PRIMEIRO, VAI PARA AS VARIÁVEIS, TENTA CARREGAR TODAS E DEPOIS RODA AS FUNCTIONS
+        //usando função do JQuery, que carrega o document antes de executar o que tem ai dentro -> dessa forma pegamos os botões
+
+        var selectUser = function(id){
+            for (var i = 0; i < people.length; i++) {
+                if (id == people[i].id) {
+                    return i;
+                }
+            }
+            return -1;
+        }
+
+        var deleteUser = function(botao){
+            //seleciona o usuario  
+            var index = selectUser(botao.id);
+            //faz o update da lista no sistema
+            people.splice(index, 1);
+            updateLocalStorage(people);
+            //remove a pessoa
+            $(botao).parent().parent().remove();
+            //chama update view pra mudar o index
+            updateView();
+        }
+        
+        var onCancelButtonClick = function(botao){
+            if(verifyAutentication()){
+                deleteUser(botao);
+            }
+        }
+        
+        var onCogButtonClick = function(botao){
+            console.log(botao);
+            console.log(selectUser(botao.id));
+            var index = selectUser(botao.id);
+            localStorage.setItem("updateUser", index);
+            window.location.href = '/form/form.html';
+        }
+
+        var onAddNewUserClick = function(){
+            // verifyAutentication para poder adicionar novos usuários
+            if(verifyAutentication()){
+                window.location.href = '/form/form.html';
+            }
+        }
+
+        var exportToExcel = document.getElementById("exportToExcel");
+
+        exportToExcel.addEventListener("click", function(){
+            console.log("export to excel");
+        });
+
+        //ajeitando parte de paginação
+        //pinta o botão da página atual de azul
+        var buttonPage = document.getElementById(currentPage + "button");
+        buttonPage.style = "color: white;background-color: #22bee6;";
+
+        //mostra a quantidade certa de entries e showing baseado nas variáveis no dashboard.js
+        var currentEntrieVar = document.getElementById("currentEntrie");
+        currentEntrieVar.innerHTML = currentEntrie;
+        var totalAmountVar = document.getElementById("totalAmount");
+        totalAmountVar.innerHTML = entriesAmount;
+    </script>
+
+</html>

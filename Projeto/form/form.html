@@ -1,62 +1,56 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <!-- parte que torna mais responsível e ajusta zoom no mobile -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-    <link rel="stylesheet" href="aa.css">
+    
+    <link rel="stylesheet" href="form.css">
     <script src="input-mask.js"></script>
-    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;800&display=swap"
-        rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:wght@300;400;800&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;700&display=swap" rel="stylesheet">
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" />
     <title>Registration Form</title>
 </head>
 
 <body>
-    <section>
-        <header>
+   <section>
+       <header>
             <h1 id="aboutYou">About you</h1>
             <span>Tell us who you are! You can modify your personal information here.</span>
-        </header>
+       </header>
+       
+       <form action="" class="form">
+           <div class="twoI">
 
-        <form action="" class="form">
-            <div class="twoI">
-
-                <div class="form-group has-feedback">
-                    <a href="#" class="infoC">
-                        <span id="infoCircle" class="glyphicon glyphicon-info-sign"></span>
-
-                        <span class="infoPanel">
-                            Some information about something really
-                            long. Helping others now what this is.
-                        </span>
-                    </a>
+            <div class="form-group has-feedback">
+                <a href="#" class="infoC">
+                    <span id="infoCircle" class="glyphicon glyphicon-info-sign"></span>
+                        
+                    <span class="infoPanel" >
+                        Some information about something really
+                        long. Helping others now what this is.
+                    </span>    
+                </a>
 
 
-                    <label for="inputWarning" class="namel">Name</label>
-                    <input id="inputNome" class="inputValid" type="text" placeholder="ex. Lewis"
-                        onclick="checkInputs(this)" oninput="checkInputs(this)" required>
+                   <label for="inputWarning" class="namel">Name</label>
+                   <input id="inputNome" class="inputValid" type="text" placeholder="ex. Lewis" onclick="checkInputs(this)" oninput="checkInputs(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="">Last Name</label>
-                    <input id="lastNameInput" class="inputValid" type="text" placeholder="ex. Hamilton"
-                        onclick="checkInputs(this)" oninput="checkInputs(this)" required>
+                    <input id="lastNameInput" class="inputValid" type="text" placeholder="ex. Hamilton" onclick="checkInputs(this)" oninput="checkInputs(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="">Passport (ROLE)</label>
-                    <input id="passportInput" class="inputValid" type="text" placeholder="ex. A2384738274"
-                        onclick="checkInputs(this)" oninput="checkInputs(this)" required>
+                    <input id="passportInput" class="inputValid" type="text" placeholder="ex. A2384738274" onclick="checkInputs(this)" oninput="checkInputs(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
-                </div>
+                </div >
                 <div class="form-group has-feedback">
                     <label for="">Email</label>
-                    <input id="emailInput" class="email" type="email" placeholder="ex. example@email.com"
-                        onclick="emailCheck(this)" oninput="emailCheck(this)" required>
+                    <input id="emailInput" class="email" type="email" placeholder="ex. example@email.com" onclick="emailCheck(this)" oninput="emailCheck(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                     <span class="alert" style="visibility: hidden;">Please enter a valid email address</span>
                 </div>
@@ -236,89 +230,82 @@
             </div>
             <div class="twoI">
                 <div class="form-group has-feedback">
-                    <label for="">Country of residence</label>
-                    <input id="countryInput" class="inputValid" type="text" placeholder="ex. Canada"
-                        onclick="checkInputs(this)" oninput="checkInputs(this)" required>
+                    <label for="">Country of residence (PASSWORD)</label>
+                    <input id="countryInput" class="inputValid" type="text" placeholder="ex. Canada" onclick="checkInputs(this)" oninput="checkInputs(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="">Address</label>
-                    <input class="inputValid" type="text" placeholder="ex. Diagonal 4 Avenue"
-                        onclick="checkInputs(this)" oninput="checkInputs(this)" required>
+                    <input class="inputValid" type="text" placeholder="ex. Diagonal 4 Avenue" onclick="checkInputs(this)" oninput="checkInputs(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="">Mobile Phone</label>
-                    <input class="inputValid" type="text" id="phone" onclick="checkInputs(this)"
-                        oninput="checkInputs(this)" required>
+                    <input class="inputValid" type="text" id="phone" onclick="checkInputs(this)" oninput="checkInputs(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                 </div>
                 <div class="form-group has-feedback">
                     <label for="">Company email</label>
-                    <input class="email" type="email" placeholder="ex. company@email.com" class="req"
-                        onclick="emailCheck(this)" oninput="emailCheck(this)" required>
+                    <input class="email" type="email" placeholder="ex. company@email.com" class="req" onclick="emailCheck(this)" oninput="emailCheck(this)" required>
                     <span id="asterisk" class="glyphicon glyphicon-asterisk form-control-feedback"></span>
                     <span class="alert" style="visibility: hidden;">Please enter a valid email address</span>
                 </div>
             </div>
             <!-- <div> -->
-            <div class="last">
-                <div>
-                    <div class="buttons">
-                        <button type="button" id="upButton"
-                            style="background-color: #565a63;color: white; padding: 0 20px;">
-                            <p><input class="image" type="file" accept="image/*" name="image" id="file"
-                                    onchange="loadFile(event)" style="display: none;"></p>
-                            <p><label for="file" style="cursor: pointer;font-size: 12px;">Upload Image</label></p>
-                        </button>
-                        <button type="button" id="delButton" style="background-color: #e7e9ef;" onclick="deleteFile()">
-                            Delete picture
-                        </button>
+                <div class="last">
+                    <div>
+                        <div class="buttons">
+                            <button type="button" id="upButton" style="background-color: #565a63;color: white; padding: 0 20px;" >
+                                <p><input class="image" type="file" accept="image/*" name="image" id="file" onchange="loadFile(event)" style="display: none;"></p>
+                                <p><label for="file" style="cursor: pointer;font-size: 12px;">Upload Image</label></p>
+                            </button>
+                            <button type="button" id="delButton" style="background-color: #e7e9ef;" onclick="deleteFile()">
+                                Delete picture
+                            </button>
+                        </div>
+                    </div>
+                    <div>
+                        <img id="profile" src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_357118.png&f=1&nofb=1" style="border-radius: 50%;" alt="">
+                    </div>
+                    <div id="text">
+                        <span>
+                            JPEG, PNG, GIF or BMP -5MB file limit, at least 250x250 pixels.
+                        </span>
                     </div>
                 </div>
+           </form>
+    
+           <footer>
                 <div>
-                    <img id="profile"
-                        src="https://external-content.duckduckgo.com/iu/?u=http%3A%2F%2Fcdn.onlinewebfonts.com%2Fsvg%2Fimg_357118.png&f=1&nofb=1"
-                        style="border-radius: 50%;" alt="">
-                </div>
-                <div id="text">
-                    <span>
-                        JPEG, PNG, GIF or BMP -5MB file limit, at least 250x250 pixels.
-                    </span>
-                </div>
-            </div>
-        </form>
-
-        <footer>
-            <div>
-                <button type="button" id="saveChanges" style="background-color: #e84c3d;color:white"
+                    <button type="button" id="saveChanges" 
+                    style="background-color: #e84c3d;color:white"
                     onclick="saveChanges()">
-                    Save Changes
-                </button>
-            </div>
-        </footer>
-        <!-- </div> -->
+                        Save Changes
+                    </button>
+                </div>
+           </footer>
+            <!-- </div> -->
 
-    </section>
+   </section>
 
-    <script>
-        var inputs = document.getElementsByTagName("input");
-        var selects = document.getElementsByTagName("select");
+   <script>
+       var inputs = document.getElementsByTagName("input");
+       var selects = document.getElementsByTagName("select");
 
         new InputMask().Initialize(document.querySelectorAll("#phone"), {
-            mask: InputMaskDefaultMask.Phone,
-            placeHolder: "ex. (99) 99999-9999"
-        });
+                mask: InputMaskDefaultMask.Phone,
+                placeHolder: "ex. (99) 99999-9999"
+            });
 
         function validaEmail(email) {
-            er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
+                er = /^[a-zA-Z0-9][a-zA-Z0-9\._-]+@([a-zA-Z0-9\._-]+\.)[a-zA-Z-0-9]{2}/;
 
-            if (er.exec(email)) {
-                return true;
-            } else {
-                return false;
+                if (er.exec(email)) {
+                    return true;
+                } else {
+                    return false;
+                }
             }
-        }
 
         function testePinta(event) {
             // pega o asterisco para mudar pra exclamação
@@ -337,60 +324,80 @@
             }
         }
 
-        function saveChanges() {
-            for (var i = 0; i < inputs.length; i++) {
-                checkInputs(inputs[i]);
-            }
-            for (var i = 0; i < selects.length; i++) {
-                checkSelects(selects[i]);
-            }
-
+        function saveChanges(){
             //pega as informações dos inputs e salva
             //no local storage como propriedades do objeto
-            console.log(document.getElementById("lastNameInput").value);
+            // console.log(document.getElementById("lastNameInput").value);
             var name = document.getElementById("inputNome").value;
-            name += " " + document.getElementById("lastNameInput").value;
+            // var lastName = document.getElementById("lastNameInput").value;
             var role = document.getElementById("passportInput").value;
             var status = document.getElementById("language").value;
             var day = document.getElementById("day").value;
             var month = document.getElementById("month").value;
             var year = document.getElementById("year").value;
+            var password = document.getElementById("countryInput").value;
 
-            var date = day + "/" + month + "/" + year;
+            // var date = day + "/" + month + "/" + year;
 
-            if (status == 1) {
-                status = "Active";
-            } else if (status == 2) {
-                status = "Inactive";
-            } else {
-                status = "Suspended";
-            }
+            
+           if(status == '1'){
+               status = "Active";
+           }else if(status == '2'){
+               status = "Inactive";
+           }else if(status == '3'){
+               status = "Suspended";
+           }
+
 
             localStorage.setItem('namePerson', name);
+            // localStorage.setItem('lastNamePerson', lastName);
             localStorage.setItem('rolePerson', role);
             localStorage.setItem('statusPerson', status);
-            localStorage.setItem('datePerson', date);
+            localStorage.setItem('day', day);
+            localStorage.setItem('month', month);
+            localStorage.setItem('year', year);
+            // localStorage.setItem('datePerson', date);
+            localStorage.setItem('password', password);
 
+            if(localStorage.getItem("updateUser")){
+                window.location.href = "/dashboard/dashboard.html";
+            }
+            
+            //parte que verifica a validade dos inputs, se for válido redireciona para o dashboard
+            if(name && role && password && status != 0 && day != 0 && month != 0 && year != 0 && localStorage.getItem('imageUrl')){
+                console.log("informações essenciais preenchidas!");
+                window.location.href = "/dashboard/dashboard.html";
+            }
+            else{
+                alert("Por favor, preencha todos os campos necessários!");
+            }
+
+             for (var i = 0; i < inputs.length; i++) {
+                checkInputs(inputs[i]);
+            }
+            for (var i = 0; i < selects.length; i++) {
+                checkSelects(selects[i]);
+            }
         }
-
-        function checkSelects(select) {
-            if (select.value == 0) {
+        
+        function checkSelects(select){
+            if(select.value == 0){
                 // console.log(select.className);
                 select.className = "inputInvalid";
                 select.style.boxShadow = "1px 1px 1 orange";
             }
-            else {
+            else{
                 select.className = "inputValid";
             }
         }
 
-        function emailCheck(input) {
-            if (validaEmail(input.value)) {
-                input.parentNode.childNodes[7].style.visibility = "hidden";
-                input.parentNode.childNodes[5].className = "glyphicon glyphicon-asterisk form-control-feedback"
-                input.className = "inputValid";
+        function emailCheck(input){
+            if(validaEmail(input.value)){
+                    input.parentNode.childNodes[7].style.visibility = "hidden";
+                    input.parentNode.childNodes[5].className = "glyphicon glyphicon-asterisk form-control-feedback"
+                    input.className = "inputValid";
             }
-            else {
+            else{
                 input.parentNode.childNodes[7].style.visibility = "visible";
                 input.parentNode.childNodes[5].className = "glyphicon glyphicon-exclamation-sign form-control-feedback"
                 input.className = "inputInvalid";
@@ -398,27 +405,27 @@
             }
         }
 
-        function checkInputs(input) {
-            if (input.className == "email") {
+        function checkInputs(input){
+            if(input.className == "email"){
                 emailCheck(input);
             }
-            else if (input.className != "image") {
-                if (input.checkValidity()) {
-                    if (input.parentNode.childNodes[3].className == "namel") {
-                        input.parentNode.childNodes[7].className = "glyphicon glyphicon-asterisk form-control-feedback"
+            else if(input.className != "image"){
+                if(input.checkValidity()){
+                    if(input.parentNode.childNodes[3].className == "namel"){
+                    input.parentNode.childNodes[7].className = "glyphicon glyphicon-asterisk form-control-feedback"
                     }
-                    else {
-                        input.parentNode.childNodes[5].className = "glyphicon glyphicon-asterisk form-control-feedback"
+                    else{
+                    input.parentNode.childNodes[5].className = "glyphicon glyphicon-asterisk form-control-feedback"
                     }
                     input.className = "inputValid";
                 }
-                else {
-                    if (input.parentNode.childNodes[3].className == "namel") {
+                else{
+                     if (input.parentNode.childNodes[3].className == "namel") {
                         input.parentNode.childNodes[7].className = "glyphicon glyphicon-exclamation-sign form-control-feedback"
-                    }
-                    else {
+                     }
+                     else{
                         input.parentNode.childNodes[5].className = "glyphicon glyphicon-exclamation-sign form-control-feedback"
-                    }
+                     }
                     input.className = "inputInvalid";
                 }
             }
@@ -449,7 +456,7 @@
             reader.readAsDataURL(file);
         })
 
-    </script>
+   </script>
 </body>
 
 </html>
