@@ -68,7 +68,7 @@
                 <!-- div sign up for non-members -->
                 <div id="nonMemberText">
                     <p class="normalText">
-                        Not a member? <a href="https://www.seedprod.com/wp-content/uploads/2019/08/Under-construction-page-in-WP.jpg"> Sign up now</a>
+                        Not a member? <a href="/form/form.html"> Sign up now</a>
                     </p>
                 </div>
             </div>
@@ -92,9 +92,7 @@
 
                 //se apagar a lista, então ele faz o login pra gerar a lista, porem define como falsa a autenticação
                 if(userList == null){
-                    localStorage.setItem("autentication", false);
-                    window.location.href = '/dashboard/dashboard.html';
-                    
+                    msg.textContent = "Usuário ou senha incorretos";             
                 }
                 else{
                     for(var i = 0; i < userList.length; i++){
